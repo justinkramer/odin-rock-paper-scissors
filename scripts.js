@@ -21,12 +21,15 @@ let getPlayerChoice = () => {
         return playerChoice.toLowerCase();
     }
     else if(playerChoice === null){
-        return;
+        return "quit";
     }
     return getPlayerChoice();
 }
 
 let judgeWinner = (playerChoice, computerChoice) => {
+    if(playerChoice === 'quit'){
+        return "quit";
+    }
     let winner;
     console.log("playerChoice: " + playerChoice);
     console.log("computerChoice: " + computerChoice);
@@ -70,6 +73,10 @@ let playGame = (playerScore=0,computerScore=0) => {
     let computerChoice = getComputerChoice();
     let playerChoice = getPlayerChoice();
     let winner = judgeWinner(playerChoice, computerChoice);
+    if(winner === 'quit'){
+        console.log("Thanks for playing!");
+        return "Thanks for playing!";
+    }
     if(winner === 'tie'){
         console.log("It's a tie!");
     }
