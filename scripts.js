@@ -1,5 +1,5 @@
 let getComputerChoice = () => {
-    let randomSelection = Math.floor(Math.random() * 3);
+    let randomSelection = Math.floor(Math.random() * 3); // 0, 1, or 2 to match array index
     switch(randomSelection) {
         case 0:
             return 'rock';
@@ -17,10 +17,10 @@ let getComputerChoice = () => {
 let getPlayerChoice = () => {
     let playerChoice =  prompt('Choose rock, paper, or scissors: ');
     const choices = ['rock', 'paper', 'scissors'];
-    if(playerChoice !== null && choices.includes(playerChoice.toLowerCase())){
+    if(playerChoice && choices.includes(playerChoice.toLowerCase())){
         return playerChoice.toLowerCase();
     }
-    else if(playerChoice === null){
+    else if(!playerChoice){
         return "quit";
     }
     return getPlayerChoice();
