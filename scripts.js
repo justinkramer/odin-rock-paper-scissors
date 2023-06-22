@@ -103,7 +103,3 @@ buttons.forEach((button) => {
         }
     });
 });
-
-
-
-//playGame();
